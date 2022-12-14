@@ -1,11 +1,22 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image, ImageBackground, Button, Alert } from 'react-native';
+import { 
+  StyleSheet,
+   View, 
+   Text, 
+   Image, 
+   ImageBackground, 
+   Button, 
+   Alert, 
+   ScrollView,
+  } from 'react-native';
+  
 import profile from './images/profile.png';
 import bg from './images/bg_3.png';
 
 const Profile = ({route}) => {
   
   return (
+    <ScrollView>
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
       <View style={styles.container}>
         <View style={styles.container_1}>
@@ -37,6 +48,7 @@ const Profile = ({route}) => {
         </View>
       </View>
       </ImageBackground>
+      </ScrollView>
   );
 };
 

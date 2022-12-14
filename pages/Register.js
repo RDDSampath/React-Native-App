@@ -9,6 +9,7 @@ import {
   Image,
   ImageBackground,
   ToastAndroid,
+  ScrollView,
 } from 'react-native';
 import bg from './images/bg_2.png';
 import logo from './images/logo.png';
@@ -70,15 +71,18 @@ const Register = ({navigation}) => {
   };
   
   return (
+    <ScrollView>
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
       <View style={styles.container}>
         <Text style={styles.heading}>
           Create Account
         </Text>
+        <SafeAreaView>
         <Image
           style={styles.tinyLogo}
           source={logo}
         />
+        </SafeAreaView>
         <TextInput
           value={firstName}
           onChangeText={(firstname) => setFirstName(firstname)}
@@ -119,6 +123,7 @@ const Register = ({navigation}) => {
         </View>
       </View>
       </ImageBackground>
+      </ScrollView>
 
   );
 };
