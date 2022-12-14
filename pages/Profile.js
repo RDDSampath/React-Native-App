@@ -9,12 +9,12 @@ import {
    Alert, 
    ScrollView,
   } from 'react-native';
-  
+
 import profile from './images/profile.png';
 import bg from './images/bg_3.png';
 
-const Profile = ({route}) => {
-  
+const Profile = ({route,navigation}) => {
+
   return (
     <ScrollView>
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
@@ -26,25 +26,15 @@ const Profile = ({route}) => {
         <Image source={profile} style={styles.profileImg} />
         </View>
         <View style={styles.textBack}>
-        <Text style={styles.textStyle}>
-          First Name : {route.params.firstName}
-        </Text>
-        <Text style={styles.textStyle}>
-          Last Name : {route.params.lastName}
-        </Text>
-        <Text style={styles.textStyle}>
-          E-Mail : {route.params.eMail}
-        </Text>
-        </View>
-        <View style={styles.fixToText}>
-          <Button
-            title="Update"
-            onPress={() => Alert.alert('Not yet build !')}
-          />
-          <Button
-            title="Delete"
-            onPress={() => Alert.alert('Not yet build !')}
-          />
+            <Text style={styles.textStyle}>
+              First Name : {route.params.firstName}
+            </Text>
+            <Text style={styles.textStyle}>
+              Last Name : {route.params.lastName}
+            </Text>
+            <Text style={styles.textStyle}>
+              E-mail : {route.params.eMail}
+            </Text>
         </View>
       </View>
       </ImageBackground>
@@ -98,4 +88,8 @@ const styles = StyleSheet.create({
     borderRadius:10,
     padding:10,
   },
+  btn:{
+    margin:20,
+  },
+
 });

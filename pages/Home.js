@@ -68,48 +68,6 @@ const Register = ({navigation}) => {
       eMail:eMail,
       password:password,
     })
-  };
-  const list = () => {
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
-    //Check for the Name TextInput
-    if (!firstName.trim()) {
-      ToastAndroid.show("First name is required.", 
-      ToastAndroid.SHORT);
-      return;
-
-    }
-    //Check for the Email TextInput
-    if (!lastName.trim()) {
-      ToastAndroid.show("Last Name is required.", 
-      ToastAndroid.SHORT);
-      return;
-    }
-    if (!eMail.trim()) {
-      ToastAndroid.show("Email is required.", 
-      ToastAndroid.SHORT);
-      return;
-    }
-    if (!eMail.match(validRegex)) {
-      ToastAndroid.show("Invalid Email", 
-      ToastAndroid.SHORT);
-      return;
-    }
-    if (!password.trim()) {
-      ToastAndroid.show("Password is required.", 
-      ToastAndroid.SHORT);
-      return;
-    }
-    if (password.length < 6) {
-      ToastAndroid.show("Password need at least 6 charcter", 
-      ToastAndroid.SHORT);
-      return;
-    }
-    //Checked Successfully
-    //Do whatever you want
-    alert('Successfully ');
-    ToastAndroid.show("List Loading....", 
-      ToastAndroid.SHORT);
     navigation.navigate('list', {
       firstName: firstName,
       lastName: lastName,
@@ -157,24 +115,14 @@ const Register = ({navigation}) => {
           secureTextEntry
           onChangeText={(pass) => setPass(pass)}
         />
-        <View style={styles.btn}>
         <Button
           title="Register"
           //Button Title
           onPress={() => {
             checkTextInput();
            }}
-          />
-          </View>
-          <View style={styles.btn}>
-        <Button
-          title="Registerd List"
-          //Button Title
-          onPress={() => {
-            list();
-           }}
-        />
-        </View>
+          style={{borderRadius:20,backgroundColor:'red',}}
+        /> 
         <Text></Text>
         <View style={{flexDirection: 'row',marginTop:10,}}>
           <Image source={facebook} style={styles.rlogo}/>
@@ -201,7 +149,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: "Cochin",
     marginVertical: 10,
-    color:'blue',
   },
   textStyle: {
     textAlign: 'center',
@@ -216,7 +163,6 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     textAlign:'center',
     backgroundColor: '#EAFAF1',
-    border:'2 solid red',
   },
   tinyLogo: {
     width: 120,
@@ -231,9 +177,4 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center"
   },
-  btn:{
-    marginTop:10,
-    width:300,
-    textColor:'#ABCD',
-  }
 });

@@ -7,6 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import List from './pages/List';
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,20 @@ const App = () => {
           component={Profile}
           options={{
             title: 'Profile', //Set Header Title
+            headerStyle: {
+              backgroundColor: '#48C9B0', //Set Header color
+            },
+            headerTintColor: '#fff', //Set Header text color
+            headerTitleStyle: {
+              fontWeight: 'bold', //Set Header text style
+            },
+          }}
+        />
+        <Stack.Screen
+          name="list"
+          component={List}
+          options={{
+            title: 'list of Register', //Set Header Title
             headerStyle: {
               backgroundColor: '#48C9B0', //Set Header color
             },
