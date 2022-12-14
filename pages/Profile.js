@@ -4,6 +4,7 @@ import profile from './images/profile.png';
 import bg from './images/bg_3.png';
 
 const Profile = ({route}) => {
+  
   return (
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
       <View style={styles.container}>

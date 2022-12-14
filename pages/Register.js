@@ -7,7 +7,8 @@ import {
   TextInput,
   Button,
   Image,
-  ImageBackground
+  ImageBackground,
+  ToastAndroid,
 } from 'react-native';
 import bg from './images/bg_2.png';
 import logo from './images/logo.png';
@@ -20,6 +21,54 @@ const Register = ({navigation}) => {
   const [eMail, setEmail] = useState('');
   const [password, setPass] = useState('');
 
+  
+  const checkTextInput = () => {
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    //Check for the Name TextInput
+    if (!firstName.trim()) {
+      ToastAndroid.show("First name is required.", 
+      ToastAndroid.SHORT);
+      return;
+
+    }
+    //Check for the Email TextInput
+    if (!lastName.trim()) {
+      ToastAndroid.show("Last Name is required.", 
+      ToastAndroid.SHORT);
+      return;
+    }
+    if (!eMail.trim()) {
+      ToastAndroid.show("Email is required.", 
+      ToastAndroid.SHORT);
+      return;
+    }
+    if (!eMail.match(validRegex)) {
+      ToastAndroid.show("Invalid Email", 
+      ToastAndroid.SHORT);
+      return;
+    }
+    if (!password.trim()) {
+      ToastAndroid.show("Password is required.", 
+      ToastAndroid.SHORT);
+      return;
+    }
+    if (password.length < 6) {
+      ToastAndroid.show("Password need at least 6 charcter", 
+      ToastAndroid.SHORT);
+      return;
+    }
+    //Checked Successfully
+    //Do whatever you want
+    alert('Success');
+    navigation.navigate('Profile', {
+      firstName: firstName,
+      lastName: lastName,
+      eMail:eMail,
+      password:password,
+    })
+  };
+  
   return (
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
       <View style={styles.container}>
@@ -35,6 +84,7 @@ const Register = ({navigation}) => {
           onChangeText={(firstname) => setFirstName(firstname)}
           placeholder={'Enter First Name'}
           style={styles.inputStyle}
+          id="form"
         />
         <TextInput
           value={lastName}
@@ -58,11 +108,9 @@ const Register = ({navigation}) => {
         <Button
           title="Register"
           //Button Title
-          onPress={() =>
-            navigation.navigate('Profile', {
-              firstName: firstName,lastName: lastName,eMail:eMail,password:password,
-            })
-          }
+          onPress={() => {
+            checkTextInput();
+           }}
           style={{borderRadius:20,backgroundColor:'red',}}
         /> 
         <View style={{flexDirection: 'row',marginTop:10,}}>
