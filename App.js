@@ -21,7 +21,7 @@ const App = () => {
           options={{
             title: 'Create Account', //Set Header Title
             headerStyle: {
-              backgroundColor: '#48C9B0', //Set Header color
+              backgroundColor: 'rgb(191, 95, 255)', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -35,7 +35,7 @@ const App = () => {
           options={{
             title: 'Profile', //Set Header Title
             headerStyle: {
-              backgroundColor: '#48C9B0', //Set Header color
+              backgroundColor: 'rgb(191, 95, 255)', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {
@@ -47,9 +47,9 @@ const App = () => {
           name="list"
           component={List}
           options={{
-            title: 'list of Register', //Set Header Title
+            title: 'Registered List', //Set Header Title
             headerStyle: {
-              backgroundColor: '#48C9B0', //Set Header color
+              backgroundColor: 'rgb(191, 95, 255)', //Set Header color
             },
             headerTintColor: '#fff', //Set Header text color
             headerTitleStyle: {

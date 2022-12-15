@@ -5,13 +5,11 @@ import {
    Text, 
    Image, 
    ImageBackground, 
-   Button, 
-   Alert, 
    ScrollView,
   } from 'react-native';
 
 import profile from './images/profile.png';
-import bg from './images/bg_3.png';
+import bg from './images/bg.png';
 
 const Profile = ({route,navigation}) => {
 
@@ -87,6 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor:'#AFabcdef',
     borderRadius:10,
     padding:10,
+    marginBottom:200,
   },
   btn:{
     margin:20,

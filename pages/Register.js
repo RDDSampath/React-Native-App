@@ -11,8 +11,8 @@ import {
   ToastAndroid,
   ScrollView,
 } from 'react-native';
-import bg from './images/bg_2.png';
-import logo from './images/logo.png';
+import bg from './images/bg.png';
+import logo from './images/register.png';
 import google from './images/google.png';
 import facebook from './images/facebok.png';
 
@@ -61,7 +61,8 @@ const Register = ({navigation}) => {
     }
     //Checked Successfully
     //Do whatever you want
-    alert('Success');
+    ToastAndroid.show("Done", 
+      ToastAndroid.SHORT);
     navigation.navigate('Profile', {
       firstName: firstName,
       lastName: lastName,
@@ -107,7 +108,7 @@ const Register = ({navigation}) => {
     }
     //Checked Successfully
     //Do whatever you want
-    alert('Successfully ');
+    alert('logging success ');
     ToastAndroid.show("List Loading....", 
       ToastAndroid.SHORT);
     navigation.navigate('list', {
@@ -131,6 +132,7 @@ const Register = ({navigation}) => {
           source={logo}
         />
         </SafeAreaView>
+        <Text style={styles.topic}>Enter First Name</Text>
         <TextInput
           value={firstName}
           onChangeText={(firstname) => setFirstName(firstname)}
@@ -138,18 +140,21 @@ const Register = ({navigation}) => {
           style={styles.inputStyle}
           id="form"
         />
+        <Text style={styles.topic}>Enter Last Name</Text>
         <TextInput
           value={lastName}
           onChangeText={(lastname) => setLastName(lastname)}
           placeholder={'Enter last Name'}
           style={styles.inputStyle}
         />
+        <Text style={styles.topic}>Enter E-mail Address</Text>
         <TextInput
           value={eMail}
           onChangeText={(email) => setEmail(email)}
           placeholder={'Enter Email'}
           style={styles.inputStyle}
         />
+        <Text style={styles.topic}>Enter Password</Text>
         <TextInput
           style={styles.inputStyle}
           value={password}
@@ -160,6 +165,7 @@ const Register = ({navigation}) => {
         <View style={styles.btn}>
         <Button
           title="Register"
+          color="orange"
           //Button Title
           onPress={() => {
             checkTextInput();
@@ -169,6 +175,7 @@ const Register = ({navigation}) => {
           <View style={styles.btn}>
         <Button
           title="Registerd List"
+          color="orange"
           //Button Title
           onPress={() => {
             list();
@@ -201,7 +208,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: "Cochin",
     marginVertical: 10,
-    color:'blue',
+    color:'white',
+  },
+  topic:{
+    fontWeight:'bold',
+    color:'white',
+    fontSize:18,
   },
   textStyle: {
     textAlign: 'center',
@@ -209,18 +221,18 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   inputStyle: {
-    width: '80%',
+    color:'white',
+    width: '90%',
     height: 44,
     padding: 10,
-    marginVertical: 10,
-    borderRadius: 60,
+    marginVertical: 1,
+    borderRadius: 20,
     textAlign:'center',
-    backgroundColor: '#EAFAF1',
-    border:'2 solid red',
+    backgroundColor: 'rgba(191, 95, 255, 0.644)',
   },
   tinyLogo: {
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
   },
   rlogo: {
     width: 50,
