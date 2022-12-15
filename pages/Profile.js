@@ -10,6 +10,7 @@ import {
 
 import profile from './images/profile.png';
 import bg from './images/bg.png';
+import boy from './images/boy.png';
 
 const Profile = ({route,navigation}) => {
 
@@ -33,6 +34,9 @@ const Profile = ({route,navigation}) => {
             <Text style={styles.textStyle}>
               E-mail : {route.params.eMail}
             </Text>
+        </View>
+        <View style={styles.image1}>
+        <Image source={boy}  />
         </View>
       </View>
       </ImageBackground>
@@ -63,6 +67,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 10,
     fontWeight:'bold',
+    color:'white'
   },
   textStyle: {
     fontSize: 16,
@@ -79,13 +84,18 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center"
+    justifyContent: "center",
+  },
+  image1: {
+    justifyContent: "center",
+    width:200,
+    height:200,
   },
   textBack:{
     backgroundColor:'#AFabcdef',
     borderRadius:10,
     padding:10,
-    marginBottom:200,
+    marginBottom:50,
   },
   btn:{
     margin:20,

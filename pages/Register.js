@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
+import { Button } from '@rneui/themed';
 import {
   SafeAreaView,
   StyleSheet,
   View,
   Text,
   TextInput,
-  Button,
   Image,
   ImageBackground,
   ToastAndroid,
@@ -61,7 +61,7 @@ const Register = ({navigation}) => {
     }
     //Checked Successfully
     //Do whatever you want
-    ToastAndroid.show("Done", 
+    ToastAndroid.show("Loading....", 
       ToastAndroid.SHORT);
     navigation.navigate('Profile', {
       firstName: firstName,
@@ -118,7 +118,6 @@ const Register = ({navigation}) => {
       password:password,
     })
   };
-  
   return (
     <ScrollView>
     <ImageBackground source={bg} resizeMode="cover" style={styles.image}>
@@ -165,7 +164,18 @@ const Register = ({navigation}) => {
         <View style={styles.btn}>
         <Button
           title="Register"
-          color="orange"
+          buttonStyle={{
+            borderColor: 'rgba(78, 116, 289, 1)',
+          }}
+          type="outline"
+          titleStyle={{ color: 'white' }}
+          containerStyle={{
+            width: 200,
+            marginHorizontal: 50,
+            marginVertical: 10,
+            backgroundColor:'black',
+            borderRadius:20,
+          }}
           //Button Title
           onPress={() => {
             checkTextInput();
@@ -175,7 +185,18 @@ const Register = ({navigation}) => {
           <View style={styles.btn}>
         <Button
           title="Registerd List"
-          color="orange"
+          buttonStyle={{
+            borderColor: 'rgba(78, 116, 289, 1)',
+          }}
+          type="outline"
+          titleStyle={{ color: 'white' }}
+          containerStyle={{
+            width: 200,
+            marginHorizontal: 50,
+            marginVertical: 10,
+            backgroundColor:'black',
+            borderRadius:20,
+          }}
           //Button Title
           onPress={() => {
             list();

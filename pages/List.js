@@ -348,7 +348,9 @@ const styles = StyleSheet.create({
   textRow:{
     flexDirection: 'row',
     margin:1,
-    height:50,
+    padding:1,
+    height:53,
+    borderRadius: 10,
     backgroundColor:'rgba(246, 246, 246, 0.54)',
   },
   textRow1:{
@@ -357,7 +359,7 @@ const styles = StyleSheet.create({
   },
   boldFont:{
     fontWeight:'bold',
-    color: "black",
+    color: "rgb(173, 255, 254)",
     textAlign: "center",
     fontSize:16,
     width:120,
@@ -394,7 +396,7 @@ const styles = StyleSheet.create({
     color: "black",
     textAlign: "center",
     fontSize:16,
-    width:120,
+    width:115,
     height:60,
   },
   modalText: {
