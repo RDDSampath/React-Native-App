@@ -35,8 +35,8 @@ const Profile = ({route,navigation}) => {
               E-mail : {route.params.eMail}
             </Text>
         </View>
-        <View style={styles.image1}>
-        <Image source={boy}  />
+        <View>
+        <Image source={boy}  style={styles.tinyimg}/>
         </View>
       </View>
       </ImageBackground>
@@ -88,8 +88,7 @@ const styles = StyleSheet.create({
   },
   image1: {
     justifyContent: "center",
-    width:200,
-    height:200,
+    
   },
   textBack:{
     backgroundColor:'#AFabcdef',
@@ -99,6 +98,10 @@ const styles = StyleSheet.create({
   },
   btn:{
     margin:20,
+  },
+  tinyimg: {
+    width: 300,
+    height:300,
   },
 
 });
